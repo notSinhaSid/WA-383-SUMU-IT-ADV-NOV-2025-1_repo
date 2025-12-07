@@ -59,6 +59,46 @@ for ($i = 1; $i <= $rows; $i++) {
         echo $k;
         $k--;
     }
-
     echo "<br/>";
+}
+
+
+echo "<h2>Pattern 7</h2>";
+
+for($i = 1; $i <= $rows; $i++) {
+    $k = $rows;
+    for($j = 1; $j <= $i; $j++)
+    {
+        echo "$k";
+        $k--;
+    }
+    
+    echo "<br>";
+}
+
+echo "<h2>Pattern 8</h2>";
+
+for ($i = 1; $i <= $rows; $i++) {
+    
+    for ($j = 1; $j <= $i; $j++) {
+        $k = $i;
+        echo "$k";
+        $k++;
+    }
+
+    echo "<br>";
+}
+
+echo "<h2>Pattern 9</h2>";
+
+for ($i = 1; $i <= $rows; $i++) {
+    $k = $i;
+    for($j = $rows; $j>= 1; $j--) {
+        while($k<=$j)
+        {
+            echo "$k";
+            $k++;
+        }
+    }
+    echo "<br>";
 }
