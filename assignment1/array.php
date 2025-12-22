@@ -46,3 +46,34 @@ for($i = 0; $i < $lengthOfArray; $i++) {
 }
 echo "</tbody>";
 echo "</table>";
+
+
+$cars = array(
+    array("Volvo", 22, 18),
+    array("BMW", 15, 13),
+    array("Saab", 5, 2),
+    array("Land Rover", 17, 15)
+);
+
+$countOfCarsArray = count($cars);
+for($i = 0; $i < $countOfCarsArray; $i++) {
+    // for($j = 0; $j < count($cars[$i]); $j++) {
+    $k = 0;
+    echo $cars[$i][$k]." In Stock :".$cars[$i][$k+1].", Sold :". $cars[$i][$k+2];
+    // }
+    echo "<br>";
+}
+
+$numberArray = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+];
+
+
+for($i = 0; $i < count($numberArray); $i++) {
+    for($j = 0; $j < count($numberArray[$i]); $j++) {
+        echo "The first element : ". $numberArray[$i][$j] . "The second element :" . $numberArray[$i][$j] . "The thrid element is :". $numberArray[$i][$j];
+    }
+    echo "<br>";
+}
