@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f8fafc;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.navbar {
+    flex-shrink: 0;
+}
+
+.create-post-wrapper {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    padding: 24px;
+    gap: 24px;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+/* Left Column */
+.left-col {
+    width: 340px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+}
+
+/* Right Column */
+.right-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 10px;
+    background: white;
+}
+
+.form-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 6px;
+}
+
+.form-control {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #1e293b;
+}
+
+.form-control:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.cover-upload {
+    border: 2px dashed #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    background-color: #f8fafc;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.cover-upload:hover {
+    border-color: #3b82f6;
+}
+
+/* Content Editor */
+.content-editor {
+    flex: 1;
+    resize: none;
+    height: 100%;
+    font-size: 15px;
+    line-height: 1.7;
+    padding: 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background: white;
+}
+
+.content-editor:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.btn-publish {
+    background-color: #3b82f6;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+}
+
+.btn-publish:hover {
+    background-color: #2563eb;
+    color: white;
+}
+
+.btn-draft {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    background: white;
+    color: #64748b;
+}
+
+.btn-draft:hover {
+    background-color: #f1f5f9;
+}

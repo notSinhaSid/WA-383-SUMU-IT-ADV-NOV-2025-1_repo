@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.register-wrapper {
+    display: flex;
+    height: 100vh;
+}
+
+/* Left Panel */
+.register-left {
+    width: 30%;
+    background: linear-gradient(135deg, #2d1b0e, #5c3317);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+    color: white;
+}
+
+.register-left .brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 48px;
+}
+
+.register-left h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.register-left p {
+    font-size: 15px;
+    opacity: 0.8;
+    line-height: 1.6;
+    margin-bottom: 36px;
+}
+
+.left-features {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.left-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+/* Right Panel */
+.register-right {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../siteImages/registerBackground.png');
+    background-size: cover;
+    background-position: center;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.register-box {
+    width: 100%;
+    max-width: 480px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    padding: 36px 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.register-box h4 {
+    color: #ffffff;
+}
+
+.register-box .text-muted {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.register-box .form-label {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.register-box .form-check-label {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.register-box .form-control {
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.register-box .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.register-box .form-control:focus {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+.register-box .form-check-input {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.register-box .btn-primary {
+    background: rgba(193, 125, 60, 0.9);
+    border: none;
+    padding: 11px;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: background 0.2s;
+}
+
+.register-box .btn-primary:hover {
+    background: rgba(168, 104, 50, 1);
+}
+
+.register-box a {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.register-box a:hover {
+    color: #ffffff;
+}
+
+.register-box p.text-center {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.password-toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.password-toggle:hover {
+    color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .register-left {
+        display: none;
+    }
+
+    .register-right {
+        width: 100%;
+    }
+
+    body {
+        overflow-y: auto;
+    }
+}
