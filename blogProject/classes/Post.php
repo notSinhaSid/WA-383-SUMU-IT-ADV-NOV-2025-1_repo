@@ -20,7 +20,14 @@ class Post {
         $stmt->bindParam(':postCategoryId', $postCategoryId, PDO::PARAM_INT);
         $stmt->bindParam(':postStatus', $postStatus, PDO::PARAM_STR);
 
-        return $stmt->execute();
+        // return $stmt->execute();
+        if($stmt->execute()) {
+            return true;
+        }
+        else{
+            print_r($stmt->errorInfo());
+            exit();
+        }
     }
 
     // to get the new id for the inserted post with the tags associated

@@ -1,3 +1,12 @@
+ClassicEditor
+    .create(document.querySelector('#postContent'))
+    .then(editor => {
+        console.log('Editor ready', editor);
+    })
+    .catch(error => {
+        console.error(error);
+    });
+
 $('#publishBtn').on('click', function (e) {
     e.preventDefault();
     console.log('button clicked');

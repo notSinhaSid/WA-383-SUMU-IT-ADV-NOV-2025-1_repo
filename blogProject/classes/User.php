@@ -39,4 +39,12 @@ class User {
         $stmt->execute();
         return $stmt->fetchColumn();
     }
+
+    // to get all the users for the admin 
+    public function getAllUser(){
+        $sql = "SELECT * FROM {$this->tableName}";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
 }

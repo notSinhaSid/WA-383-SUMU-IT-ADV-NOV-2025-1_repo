@@ -87,7 +87,7 @@ body {
 .content-editor {
     flex: 1;
     resize: none;
-    height: 100%;
+    min-height: 100vh;
     font-size: 15px;
     line-height: 1.7;
     padding: 16px;

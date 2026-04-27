@@ -226,7 +226,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                 exit();
             }
 
-            // $_SESSION['admin']['uId'] = $userByEmail['uId'];
+            $_SESSION['admin']['uId'] = $userByEmail['uId'];
             $_SESSION['admin']['uName'] = $userByEmail['uName'];
             $_SESSION['admin']['uEmail'] = $userByEmail['uEmail'];
             $_SESSION['admin']['uRole'] = $userByEmail['uRole'];

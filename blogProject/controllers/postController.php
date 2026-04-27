@@ -23,8 +23,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $postTags       = $_POST['postTags'];
             $postCategoryId = $_POST['postCategoryId'];
             $postCoverImage = '';
-            $postUserId     = $_SESSION['user']['uId'];
+            if (isset($_SESSION['user'])) {
+                $postUserId = $_SESSION['user']['uId'];
+            } elseif (isset($_SESSION['admin'])) {
+                $postUserId = $_SESSION['admin']['uId'];
+            } else {
+                $postUserId = null;
+            }
             $postStatus     = $_POST['postStatus'] ?? 'draft';
+
+            // check if session contains the userid before creating post
+            if(!$postUserId) {
+                ob_clean();
+                echo json_encode([
+                    'status' => 'error',
+                    'message' => 'Not logged in, Login to continue',
+                ]);
+                exit();
+            }
 
             // 1. empty check
             if (empty($postTitle) || empty($postContent) || empty($postTags) || empty($postCategoryId)) {
@@ -80,7 +96,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $result = $postObj->createPost($postTitle, $postContent, $postCoverImage, $postUserId, $postCategoryId, $postStatus);
 
             if ($result) {
-                // 4. get new post id
                 $postId = $postObj->getLastInsertId();
 
                 // 5. handle tags — loop through each tag
@@ -92,6 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         $tagObj->attachToPost($postId, $tagId);
                     }
                 }
+                ob_clean();
 
                 echo json_encode([
                     'status'  => 'success',
